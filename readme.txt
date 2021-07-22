@@ -1,0 +1,24 @@
+2020.11.25
+*gcc工程模板，默认开启FPU
+2020.11.26
+*链接了官方DSP库
+2021.1.11
+*适配到stm32f407
+	|修改system_stm32f4xx.c-pll分频系数25->8,CPU频率才能跑在168MHz
+	|使用两个delay.c文件，以适配FreeRTOS
+*使用glibc实现printf功能，但此方法比xprintf组件多占用近4KB空间,浮点数打印还有问题
+2021.6.30
+*成功实现两个任务间的切换（不包含浮点寄存器）
+*成功实现带浮点寄存器的任务切换
+*关于R14寄存器，用于设置异常返回特权级状态和指示FPU的用法，详见《cortex-m3/m4权威指南》CHAPTER 8：8.1.4，参考链接：https://blog.csdn.net/shizes1989/article/details/96132855
+2020.7.1
+*封装了TCB初始化函数
+2020.7.12
+*移植到f401ccu6平台
+	|修改ld文件
+	|修改HSE数值
+	|修改mcu类型宏定义
+	|修改system_stm32f4xx.c中PLL_M宏为25
+*修改了vscode的json文件宏定义，便于vscode编辑
+2020.7.22
+*实现基于优先级的任务创建和调度

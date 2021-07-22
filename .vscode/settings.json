@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"delay.h": "c",
+		"memfox.h": "c"
+	}
+}
